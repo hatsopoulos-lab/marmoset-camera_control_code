@@ -1,0 +1,44 @@
+sudo mkdir /media/CRI
+sudo mount -v -t cifs -o user=daltonm,domain=BSDAD //prfs.cri.uchicago.edu/nicho-lab /media/CRI
+
+sudo mkdir /opt/spinnaker/src/raw2jpg
+mkdir /home/marms/Documents/camera_control_code
+
+sudo cp /media/CRI/marmosets/important_code_database/camera_control_code/all_camera_code/Makefile /opt/spinnaker/src/raw2jpg/
+sudo cp /media/CRI/marmosets/important_code_database/camera_control_code/all_camera_code/Acquisition.cpp /opt/spinnaker/src/raw2jpg/
+             ### Change:
+                    ./input -->  ./cam1   (line 69)
+                    output  -->  jpg_cam1 (line 71)
+					
+					edit number of threads in "int numThreadsAvailable = 4;" at line 391
+					
+					change text in line 415 to "Done converting this set - removing raw images and moving to next cam..."
+					
+
+sudo apt-get install cmake
+sudo apt-get install build-essential
+
+cd /opt/spinnaker/src/raw2jpg
+sudo make
+
+sudo mv ../../bin/Acquisition /home/marms/Documents/camera_control_code/converter_raw2jpg_cam1
+
+             ### Change:
+                 ./cam1  -->  ./cam2
+                 output  -->  jpg_cam2
+
+sudo make
+sudo mv ../../bin/Acquisition /home/marms/Documents/camera_control_code/converter_raw2jpg_cam2
+
+
+#############  Repeat for number of cameras ###################
+
+Then:
+sudo chmod 777 /home/marms/Documents/camera_control_code/converter_raw2jpg_cam1
+sudo chmod 777 /home/marms/Documents/camera_control_code/converter_raw2jpg_cam2
+sudo chmod 777 /home/marms/Documents/camera_control_code/converter_raw2jpg_cam3
+sudo chmod 777 /home/marms/Documents/camera_control_code/converter_raw2jpg_cam4
+
+				 
+
+  
