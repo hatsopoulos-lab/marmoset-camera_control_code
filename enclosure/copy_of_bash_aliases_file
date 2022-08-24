@@ -1,0 +1,12 @@
+# backup to replace ~/.bash_aliases in case apparatus computer crashes
+
+alias clear_fast_trash="sudo find /media/marms/fast/.Trash-1000/files/ -name '*' | xargs -i sudo rm -rf {}"
+alias clear_storage_trash="sudo find /media/marms/storage/.Trash-1000/files/ -name '*' | xargs -i sudo rm -rf {}"
+alias backup_clear_fast_trash="sudo find /media/marms/fast/.Trash-0/files/ -name '*' | xargs -i sudo rm -rf {}"
+alias backup_clear_storage_trash="sudo find /media/marms/storage/.Trash-0/files/ -name '*' | xargs -i sudo rm -rf {}"
+
+alias connect_to_rpi="ssh pi@raspberrypi.local"
+function raw2jpg_recording() { /home/marms/Documents/marmoset-camera_control_code/enclosure/raw2jpg.sh "$@" ; }
+function raw2jpg_end()       { /home/marms/Documents/marmoset-camera_control_code/enclosure/raw2jpg_end_of_session.sh "$@" ; }
+function record()            { python /home/marms/Documents/marmoset-camera_control_code/enclosure/recording_4cams.py "$@" ; }
+function calibrate()         { python /home/marms/Documents/marmoset-camera_control_code/enclosure/calibration_4cams.py "$@" ; }
