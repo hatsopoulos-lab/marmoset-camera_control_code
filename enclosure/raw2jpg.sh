@@ -13,7 +13,13 @@ sessionNum=$4
 
 num2convert=10000
 
-processingPath='/home/marms/Documents/camera_control_code/converter_files_8_threads'
+reldir="$( dirname -- "$0"; )";
+cd "$reldir";
+directory="$( pwd; )";
+echo "Directory is ${directory}";
+
+processingPath=$directory/converter_files_8_threads
+#processingPath=/home/marms/Documents/camera_control_code/converter_files_8_threads
 session_folder=/media/marms/fast/$exp/$marms/$date/session$sessionNum
 
 tmpPath_cam1=$session_folder/cam1
