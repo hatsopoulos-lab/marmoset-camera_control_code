@@ -48,7 +48,7 @@ camera control code for apparatus and enclosure camera sets
 
 ## Camera Calibration
 
-#### Apparatus
+### Apparatus
 
 1.	Disconnect and reconnect cameras to reset settings
 
@@ -65,7 +65,7 @@ begin calibration. Move small board slowly through workspace, taking care to ens
 board is fully seen by at least 2, preferably more cameras at all positions. 
 After ~1 minute, you can hit Enter again to end calibration.
 
-#### Enclosure
+### Enclosure
 
 Repeat steps above:
 
@@ -74,7 +74,7 @@ Repeat steps above:
 Move enclosure out of visual range, then begin calibration. Use the large board 
 mounted on cardboard. 
 
-##Possible camera failures:
+## Possible camera failures:
 
 **Errors seen at top of terminal prior to trigger configuration outputs**
 
