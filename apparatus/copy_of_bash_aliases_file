@@ -6,6 +6,7 @@ alias backup_clear_fast1_trash="sudo find /media/marms/fast1/.Trash-0/files/ -na
 alias backup_clear_fast2_trash="sudo find /media/marms/fast2/.Trash-0/files/ -name '*' | xargs -i sudo rm -rf {}"
 
 alias connect_to_rpi="ssh pi@raspberrypi.local"
+alias connect_to_rpi="ssh pi@192.168.1.7"
 function raw2jpg_recording() { /home/marms/Documents/marmoset-camera_control_code/apparatus/raw2jpg.sh "$@" ; }
 function raw2jpg_end()       { /home/marms/Documents/marmoset-camera_control_code/apparatus/raw2jpg_end_of_session.sh "$@" ; }
 function record()            { python /home/marms/Documents/marmoset-camera_control_code/apparatus/recording_5cams.py "$@" ; }

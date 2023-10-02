@@ -7,7 +7,7 @@ import argparse
 class params: 
     frameRate = 200
     exposure = 3000.0 # in microseconds. Increasing exposure will allow more light in but also increase motion blur
-    gain = 3 # increase for brighter images, decrease for darker
+    gain = 8 # increase for brighter images, decrease for darker
     crop_by_cam = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
     eventSeparator = 1/frameRate * 5
     redRatio = 1.2
@@ -17,7 +17,7 @@ class params:
     hardDrive_camNum_separator = 2    
     # cam1 = '18384055'
     # cam2 = '18384025'
-    # cam3 = '19340301'
+    # cam3 = '19340301'cc
     # cam4 = '19340299'
     # cam5 = '21503283'
 
@@ -211,6 +211,7 @@ def acquire_images(cams): #+++
             handling_mode.SetIntValue(handling_mode_entry.GetValue())
 
             #  Begin acquiring images
+            
             cam.BeginAcquisition()
             print('\n\n Acquisition has begun from camera %d ... \n \n' %i)
             i += 1
@@ -348,7 +349,7 @@ def run_multiple_cameras(cams):
         acquire_images(cams)
         
         for cam in cams:
-            result &= reset_exposure(cam)
+            #result &= reset_exposure(cam)
             result &= reset_trigger(cam)
 
             # Deinitialize camera
@@ -440,10 +441,10 @@ if __name__ == '__main__':
         session = args['session']
         date = time.strftime('%Y_%m_%d')
         if type(session) == str: 
-            image_folder1 = '/media/marms/fast1/%s/%s/%s/%s'  %(expName, marms, date, session)
-            image_folder2 = '/media/marms/fast2/%s/%s/%s/%s'  %(expName, marms, date, session)
+            image_folder1 = '/media/marmosets/fast1/%s/%s/%s/%s'  %(expName, marms, date, session)
+            image_folder2 = '/media/marmosets/fast2/%s/%s/%s/%s'  %(expName, marms, date, session)
         else:
-            image_folder1 = '/media/marms/fast1/%s/%s/%s/session%d' %(expName, marms, date, session)
-            image_folder2 = '/media/marms/fast2/%s/%s/%s/session%d' %(expName, marms, date, session)
+            image_folder1 = '/media/marmosets/fast1/%s/%s/%s/session%d' %(expName, marms, date, session)
+            image_folder2 = '/media/marmosets/fast2/%s/%s/%s/session%d' %(expName, marms, date, session)
     
     main()

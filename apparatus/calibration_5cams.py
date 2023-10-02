@@ -412,9 +412,9 @@ if __name__ == '__main__':
         session = args['session']
         date = time.strftime('%Y_%m_%d')
         if type(session) == str: 
-            image_folder1 = '/media/marms/fast1/%s/%s/%s/%s'  %(expName, marms, date, session)
-            image_folder2 = '/media/marms/fast2/%s/%s/%s/%s'  %(expName, marms, date, session)
+            image_folder1 = '/media/marmosets/fast1/%s/%s/%s/%s'  %(expName, marms, date, session)
+            image_folder2 = '/media/marmosets/fast2/%s/%s/%s/%s'  %(expName, marms, date, session)
         else:
-            image_folder1 = '/media/marms/fast1/%s/%s/%s/session%d' %(expName, marms, date, session)
-            image_folder2 = '/media/marms/fast2/%s/%s/%s/session%d' %(expName, marms, date, session)
+            image_folder1 = '/media/marmosets/fast1/%s/%s/%s/session%d' %(expName, marms, date, session)
+            image_folder2 = '/media/marmosets/fast2/%s/%s/%s/session%d' %(expName, marms, date, session)
     main()
